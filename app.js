@@ -1,10 +1,5 @@
-/*
-<div id="parent">
-    <div id="child">
-        <h1></h1>
-    </div>
-</div>
-*/
+import React from "react"
+import ReactDOM from "react-dom/client"
 
 const heading = React.createElement("h1", {}, "Hello world from React")
 const heading1 = React.createElement("h1", {}, "Hello world from React")
