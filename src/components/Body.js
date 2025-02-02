@@ -41,6 +41,7 @@ const Body = () => {
                         return (
                             <RestaurantCard
                                 key={restaurant?.info?.id} 
+                                id={restaurant?.info?.id}
                                 imageId={restaurant?.info?.cloudinaryImageId}
                                 restaurantName={restaurant?.info?.name}
                                 rating={restaurant?.info?.avgRating}
