@@ -1,23 +1,12 @@
-import React, { useEffect } from "react"
-import { SWIGGY_API } from "../utils/constants"
+import React from "react"
+import useRestaurants from "../utils/useRestaurants"
 import RestaurantCard from "./RestaurantCard"
 
 const Body = () => {
 
-    const [restaurants, setRestaurants] = React.useState([])
-    const [filteredRestaurants, setFilteredRestaurants] = React.useState([])
     const [searchText, setSearchText] = React.useState("")
 
-    useEffect(() => {
-        const fetchRestaurants = async () => {
-            const data = await fetch(SWIGGY_API)
-            const json = await data.json()
-            setRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-            setFilteredRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        }
-
-        fetchRestaurants()
-    }, [])
+    const { restaurants, filteredRestaurants, setFilteredRestaurants } = useRestaurants()
 
     return (
         <div className="body">
